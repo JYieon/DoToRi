@@ -13,8 +13,8 @@
     <link rel="stylesheet" href="/static/css/board/board_list.css">
     <script src="/static/js/top.js"></script>
     <script>
-        var thema = "<%= thema %>";  // EJS에서 전달한 thema 값을 JavaScript 변수로 설정
-        console.log(thema)
+        const thema = "<%= thema %>"; //사용자 thema변수 저장
+        applyThema(thema); //사용자 thema 설정
         window.onload = async () => {
             try {
                 // 서버에서 EJS 템플릿을 렌더링한 HTML을 받아옴
@@ -25,7 +25,6 @@
             } catch (error) {
                 console.error('Error fetching data:', error);
             }
-            applyThema(thema);
         }
 
         // 페이지 이동 시 새로운 데이터를 동적으로 불러오는 함수

@@ -30,12 +30,13 @@
     <!-- 페이지 로드 시 서버에서 동적으로 HTML 데이터를 받아오는 JavaScript 코드 -->
     <script>
         // EJS에서 전달된 'thema'와 'menu' 변수 값을 JavaScript 변수로 설정
-        var thema = "<%= thema %>";  // EJS에서 전달한 thema 값을 JavaScript 변수로 설정
+        const thema = "<%= thema %>"; //사용자 thema변수 저장
+        applyThema(thema); //사용자 thema 설정
         var menu = "<%= menu %>";  // EJS에서 전달한 menu 값을 JavaScript 변수로 설정
 
         // 브라우저 콘솔에서 thema와 menu 값을 확인
-        console.log(thema);
-        console.log(menu);
+        // console.log(thema);
+        // console.log(menu);
 
         // 페이지가 로드될 때 실행되는 함수 (window.onload)
         window.onload = async () => {
@@ -51,8 +52,7 @@
                 // 오류가 발생한 경우 콘솔에 출력
                 console.error('Error fetching data:', error);
             }
-            // 페이지에 테마를 적용하는 함수 호출
-            applyThema(thema);
+            
         }
 
         // 페이지 이동 시 새로운 데이터를 동적으로 불러오는 함수

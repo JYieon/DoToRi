@@ -14,16 +14,15 @@
     <script src="/static/js/top.js"></script>
     <script src="/static/js/product/product.js"></script>
     <script>
+        const thema = "<%= uThema %>";
+        applyThema(thema);
         const overBtn = (t) => {
             document.getElementById(t.id+"_btn").style.visibility = "visible"
         }
         const outBtn = (t) => {
             document.getElementById(t.id+"_btn").style.visibility = "hidden"
         }
-        const thema = "<%= uThema %>";
-        window.onload = async () => {
-            await applyThema(thema)
-        }
+        
         const setThema = sampleThema => document.documentElement.className = sampleThema
         const apply = async (aThema, aThema_no) => {
             applyThema(aThema)
